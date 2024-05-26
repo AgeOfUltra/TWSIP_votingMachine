@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="signup_bdr" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.voting.votingmachine.controller.SignUpController">
+    <top>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #cccc00;" BorderPane.alignment="CENTER">
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="ONLINE VOTING SYSTEM">
+                <font>
+                    <Font name="System Bold" size="54.0" />
+                </font>
+            </Text>
+        </HBox>
+    </top>
+    <center>
+        <GridPane style="-fx-background-color: #ffffcc;" BorderPane.alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="NAME :" wrappingWidth="130.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Text>
+            <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="PHONE NO :" wrappingWidth="130.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Text>
+            <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="UNIQUE ID :" wrappingWidth="130.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Text>
+            <TextField fx:id="name" nodeOrientation="LEFT_TO_RIGHT" prefHeight="39.0" prefWidth="207.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField fx:id="phone" nodeOrientation="LEFT_TO_RIGHT" prefHeight="38.0" prefWidth="199.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="CREATE PASSCODE :" wrappingWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Text>
+            <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="RE ENTER PASSCODE:" wrappingWidth="155.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Text>
+            <Button fx:id="signBtn" mnemonicParsing="false" onAction="#goToBallot" prefHeight="39.0" prefWidth="114.0" style="-fx-background-color: #2196F3;" text="Sing Up" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <PasswordField fx:id="rPin" prefHeight="41.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <PasswordField fx:id="cPin" prefHeight="38.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Text fx:id="pin_sts" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="pin_sts" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                <font>
+                    <Font size="15.0" />
+                </font>
+            </Text>
+            <Text fx:id="signUp_sts" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="creation_sts" visible="false" GridPane.columnIndex="2">
+                <font>
+                    <Font size="20.0" />
+                </font>
+            </Text>
+            <Button mnemonicParsing="false" onAction="#backToLogin" prefHeight="40.0" prefWidth="104.0" style="-fx-background-color: #2196F3;" text="back to login" textFill="WHITE" GridPane.rowIndex="7">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font></Button>
+         <TextField fx:id="uid" prefHeight="38.0" prefWidth="197.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+        </GridPane>
+    </center>
+</BorderPane>
