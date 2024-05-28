@@ -64,7 +64,7 @@ public class LoginController {
                     home.setStageData(stage);
                     home.setUserData(user);
                 } else {
-                    login_sts.setText("Wrong PIN! Please try again.");
+                    login_sts.setText("Wrong Passcode! Please try again.");
                     login_sts.setStyle("-fx-text-fill: red;");
                 }
             } else {

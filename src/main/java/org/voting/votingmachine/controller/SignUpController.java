@@ -105,7 +105,6 @@ public class SignUpController {
             user.setPhone(phone.getText());
             user.setPassword(cPin.getText());
 
-            System.out.println("Signup -> : "+user.toString());
             util.saveUser(user);
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/voting/votingmachine/ballot.fxml"));
@@ -119,7 +118,6 @@ public class SignUpController {
             BallotController home = loader.getController();
             home.setStage(stage);
             home.setUserData(user);
-            System.out.println("SuccessFully logged in");
         }else{
             System.out.println("Something went wrong");
         }

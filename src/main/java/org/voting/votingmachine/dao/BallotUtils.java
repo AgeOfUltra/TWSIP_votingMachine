@@ -34,6 +34,36 @@ public class BallotUtils {
             }
         }
     }
+    public int getUserId(String uid) throws SQLException {
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        int id = 0;
+        try{
+            con = dSource.getConnection();
+            String query  = "select user_id from users where uid = ?";
+            ps = con.prepareStatement(query);
+            ps.setString(1, uid);
+            rs = ps.executeQuery();
+            if(rs.next()){
+                id = rs.getInt("user_id");
+            }
+            return id;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        finally {
+            if(ps != null){
+                ps.close();
+            }
+            if(con != null){
+                con.close();
+            }
+            if(rs != null){
+                rs.close();
+            }
+        }
+    }
 
     public void saveElection(Elections elections) throws SQLException {
         Connection con = null;
@@ -84,32 +114,7 @@ public class BallotUtils {
             }
         }
     }
-//    public void assignPartyToElection(int eid,int cid) throws SQLException {
-//        Connection con = null;
-//        PreparedStatement ps = null;
-//        try{
-//            con = dSource.getConnection();
-//            String query  = "insert into ballots (election_id, candidate_id) values(?,?)";
-//            ps = con.prepareStatement(query);
-//            ps.setInt(1,eid);
-//            ps.setInt(2,cid);
-//            int res = ps.executeUpdate();
-//            if(res > 0){
-//                System.out.println("Assigned  Party to the election successfully");
-//            }
-//        } catch (SQLException e) {
-//            System.out.println("Failed to assign election \n "+e.getMessage());
-//
-//        }
-//        finally {
-//            if(ps != null){
-//                ps.close();
-//            }
-//            if(con != null){
-//                con.close();
-//            }
-//        }
-//    }
+
     public void castVote(int id,int election_id,int candidate_id) throws SQLException {
         Connection con = null;
         PreparedStatement ps = null;

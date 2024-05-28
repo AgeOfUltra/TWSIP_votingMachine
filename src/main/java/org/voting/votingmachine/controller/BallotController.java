@@ -27,11 +27,14 @@ public class BallotController {
     private Stage stage;
     protected static User user;
     protected BallotUtils utils;
+    protected  int id;
 
     public void setUserData(User user) throws SQLException {
         BallotController.user =user;
         setProfileTab();
         setBallotElectionsTab();
+        setUserId(user.getUid());
+        BallotController.user.setId(id);
     }
     public void setStageData(Stage stage) {
         this.stage = stage;
@@ -39,6 +42,7 @@ public class BallotController {
 
     public void initialize() {
         utils = new BallotUtils();
+
     }
     protected void setProfileTab(){
         name.setText(user.getName());
@@ -75,5 +79,13 @@ public class BallotController {
     public void exit(ActionEvent event) {
         Stage stage = (Stage) home_bdr.getScene().getWindow();
         stage.close();
+    }
+    public void setUserId(String uid){
+        try{
+            this.id = utils.getUserId(uid);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }
