@@ -53,7 +53,5 @@
 <h2>Usage</h2>
 <p>Run the project using your IDE. The online voting system GUI will prompt you to register or log in. Once authenticated, you can register candidates (if you are an admin), cast your vote, and view the election results.</p>
 
-<hr>
-<p>I have already created a the jar file of the application (located at OUTPUT folder ) download and setup the database in local machine and run it!</p>
 </body>
 </html>
