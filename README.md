@@ -53,5 +53,10 @@
 <h2>Usage</h2>
 <p>Run the project using your IDE. The online voting system GUI will prompt you to register or log in. Once authenticated, you can register candidates (if you are an admin), cast your vote, and view the election results.</p>
 
+<hr>
+<p>After setting up the project change the password at the <prev><code>DatabaseUtil.java</code></prev> and rebuild for updated jar file and run it!.</p> 
+<p>Recomendation to download javafx sdk version 21.0.1 (I have ) or latest</p>
+<p>Intellij Idea (Community/Ultimate)</p>
+
 </body>
 </html>
